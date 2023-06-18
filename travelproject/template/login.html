@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+input[type="text"] {
+  width: 150px;
+
+  margin-bottom: 10px;
+  background-color: #73C6B6;
+}
+
+input[type="submit"] {
+  width: 120px;
+
+
+  background-color: #73C6B6;
+}
+.myDiv {
+border-width: 20px 5px;
+  border: 5px outset red;
+  background-color:#117A65 ;
+  text-align: center;
+  border-style:ridge;
+}
+</style>
+</head>
+<body style=background-color:#2980B9;>
+
+
+<div class="myDiv">
+  <form action="login" method="post" align="center" style=border-style:ridge;>
+    {% csrf_token %}
+        <br><br>
+        <input type="text" name="username1" placeholder="Enter your username" style=border-style:ridge;><br><br>
+        <input type="text" name="password1" placeholder="Enter your password" style=border-style:ridge;><br><br>
+        <input type="submit" style=border-style:ridge;>
+
+    </form>
+</div>
+
+{% for msg in messages %}
+<h3>{{msg}}</h3>
+{% endfor %}
+</body>
+</html>
